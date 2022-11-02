@@ -107,8 +107,8 @@ const works = [
   {
     id: 3,
     plan: "Flexible Desk",
-    cost: 10000,
-    duration: "per week",
+    cost: 45000,
+    duration: "per month",
     desc: "Access to the shared workspaces for any three (3) days between Monday and Friday and between the hours of 8:00am and 6:00pm.",
     desc2:
       "You are able to take full advantage of everything the space offers, including:",

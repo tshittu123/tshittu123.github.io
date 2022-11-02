@@ -51,20 +51,29 @@ a {
   color: var(--custom-col);
   text-decoration: none;
 }
-
-.header {
+.header_holder {
+  position: fixed;
   width: 100%;
+  box-shadow: 0px 4px 4px rgba(140, 140, 140, 0.1);
+  z-index: 110;
+  background-color: #fff;
+}
+.header {
   display: grid;
   grid-template-columns: 100px 1fr;
   padding: 16px;
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(140, 140, 140, 0.1);
-  max-width: 100vw;
+
   overflow-x: hidden;
-  position: fixed;
-  z-index: 110;
+
   height: 100px;
+  margin: auto !important;
 }
+
+.relative {
+  position: relative;
+}
+
 .books_now {
   display: flex;
 }
@@ -448,9 +457,11 @@ a {
   background-color: var(--custom-col);
 }
 
-.footer {
+.footer_holder {
   width: 100%;
   background-color: var(--custom-col);
+}
+.footer {
   padding: 30px;
   color: #fff;
 }
@@ -458,6 +469,10 @@ a {
 .ft_hold {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.ft_content a {
+  color: #fff;
 }
 
 .ft_content {
