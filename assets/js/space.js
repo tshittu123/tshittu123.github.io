@@ -30,7 +30,6 @@ const next = document.querySelector("#next");
 const errs = document.querySelector("#errs");
 const page_title = document.querySelector("#page_title");
 
-const event_type = document.querySelector("#event_type");
 const event_title = document.querySelector("#title");
 const event_date = document.querySelector("#date");
 const event_start_time = document.querySelector("#start_time");
@@ -64,7 +63,6 @@ editForm1.addEventListener(
 );
 
 [
-  event_type,
   event_title,
   event_date,
   event_start_time,
@@ -99,7 +97,6 @@ form1.style.display = "grid";
 head1.style.display = "grid";
 
 let form_details = {
-  event_type: "",
   event_title: "",
   event_date: "",
   event_start_time: "",
@@ -117,10 +114,6 @@ let form_details = {
 next.addEventListener("click", () => {
   let errs_arr = [];
   if (step === 1) {
-    event_type.value
-      ? (form_details.event_type = event_type.value)
-      : errs_arr.push("Ensure Event Type is Correctly Filled");
-
     event_title.value
       ? (form_details.event_title = event_title.value)
       : errs_arr.push("Ensure Title is Correctly Filled");
@@ -128,6 +121,9 @@ next.addEventListener("click", () => {
     event_date.valueAsDate
       ? (form_details.event_date = event_date.valueAsDate)
       : errs_arr.push("Ensure Event Date is Correctly Filled");
+
+    if (form_details.event_date.getTime() + 86400000 < new Date().getTime())
+      errs_arr.push("Ensure Event Date is not before today");
 
     event_start_time.value && !isNaN(event_start_time.value)
       ? (form_details.event_start_time = +event_start_time.value)
@@ -196,7 +192,7 @@ next.addEventListener("click", () => {
     head1.style.display = "none";
     form2.style.display = "grid";
     head2.style.display = "grid";
-    next.innerText = "Proceed to Pay";
+    next.innerText = "Confirm booking";
     page_title.innerText = "Enter user details";
     s_date.innerText = new Date(form_details.event_date).toLocaleDateString(
       "en-GB"

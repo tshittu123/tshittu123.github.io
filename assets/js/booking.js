@@ -6,15 +6,31 @@ const spaceGetter = (space_name) => {
     if (sp.categories.includes(space_name)) {
       space = `${space}
       <div class="norm_events">
-        <img src="${sp.image}" />
-        <h4>${sp.name}</h4>
-        <p>${sp.desc}</p>
-        <p>${sp.capacity}</p>
-        <h5>&#8358;${sp.cost.toLocaleString()} <span>${sp.duration}</span></h5>
-        <a href='space.html?space=${sp.id}'>
-          <button class="cst_btn">Book Space</button>
-        </a>
-    </div>`;
+          <img src="${sp.image}" />
+          <h4>${sp.name}</h4>
+          <p>${sp.desc}</p>
+          <p class="feat">Features</p>
+          <div class="grid_icons">`;
+      sp.features.forEach((feat) => {
+        space = `${space}<p><img src="assets/images/icons/${feat[0]}.png" />${feat[1]}</p>`;
+      });
+      space = `${space}
+          </div>
+          <div class="row myPrice">
+            <div class="col-5">
+              <h5>
+                &#8358;${sp.cost.toLocaleString()} 
+                <span>${sp.duration}</span>
+              </h5>
+            </div>
+            <div class="col-7">
+              <a href="space.html?space=${sp.id}">
+                <button class="cst_btn">Book Space</button>
+              </a>
+            </div>
+          </div>
+        </div>
+  `;
     }
   });
   return space;

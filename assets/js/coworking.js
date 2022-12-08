@@ -26,31 +26,27 @@ const errs = document.querySelector("#errs");
 
 const user_name = document.querySelector("#user_name");
 const user_email = document.querySelector("#user_email");
-const user_address = document.querySelector("#user_address");
 const user_phone = document.querySelector("#user_phone");
 const start_date = document.querySelector("#start_date");
-const end_date = document.querySelector("#end_date");
 
-[user_name, user_email, user_address, user_phone, start_date, end_date].forEach(
-  (el) => {
-    el.addEventListener(
-      "keyup",
-      () => {
-        errs.style.display = "none";
-        errs.innerText = "";
-      },
-      false
-    );
-    el.addEventListener(
-      "change",
-      () => {
-        errs.style.display = "none";
-        errs.innerText = "";
-      },
-      false
-    );
-  }
-);
+[user_name, user_email, user_phone, start_date].forEach((el) => {
+  el.addEventListener(
+    "keyup",
+    () => {
+      errs.style.display = "none";
+      errs.innerText = "";
+    },
+    false
+  );
+  el.addEventListener(
+    "change",
+    () => {
+      errs.style.display = "none";
+      errs.innerText = "";
+    },
+    false
+  );
+});
 
 form1.style.display = "grid";
 head1.style.display = "grid";
@@ -59,10 +55,8 @@ let form_details = {
   step1: {
     user_name: "",
     user_email: "",
-    user_address: "",
     user_phone: "",
     start_date: "",
-    end_date: "",
   },
 };
 

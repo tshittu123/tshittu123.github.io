@@ -584,18 +584,19 @@ a {
   width: 100%;
 }
 
-#events {
+#events,
+#events1 {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   padding-top: 30px;
 }
 
 .norm_events {
-  width: 350px;
+  width: 370px;
   max-width: 100%;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
@@ -662,8 +663,8 @@ a {
   margin-bottom: 18px;
 }
 
-.norm_events p:nth-of-type(2) {
-  color: var(--custom-col);
+.feat {
+  color: var(--custom-col) !important;
 }
 
 .first_desc {
@@ -785,6 +786,35 @@ a {
 
 .first_btn {
   margin-top: 30px;
+}
+
+.myPrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myPrice h5 {
+  margin: 0 !important;
+}
+
+.grid_icons {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 16px;
+}
+
+.grid_icons p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.grid_icons img {
+  width: 20px;
+  margin: 0;
+  margin-right: 10px;
 }
 
 #step1,
@@ -947,7 +977,14 @@ a {
 @media (max-width: 550px) {
   .norm_events {
     width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cccc;
   }
+
+  .norm_events:last-of-type {
+    border-bottom: 0px solid #cccc;
+  }
+
   .lis {
     font-size: 14px !important;
   }
