@@ -72,8 +72,8 @@ const spaces = [
     desc: "A conferencing room for collaborating and launching new innovative ideas. Features include",
     cost: 10000,
     duration: "per hour",
-    id: 2,
-    categories: ["events"],
+    id: 3,
+    categories: ["trainings"],
     features: [
       ["seats", "Seats 7 people"],
       ["stage", "Video Confrencing"],
@@ -92,7 +92,7 @@ const spaces = [
     capacity: "The vault seats 12 persons",
     cost: 11000,
     duration: "per hour",
-    id: 3,
+    id: 4,
     categories: ["trainings"],
     features: [
       ["seats", "Seats 8 people"],
@@ -112,7 +112,7 @@ const spaces = [
     capacity: "The vault seats 12 persons",
     cost: 30000,
     duration: "per hour",
-    id: 4,
+    id: 5,
     categories: ["demos"],
     features: [
       ["seats", "Seats 8 people"],
