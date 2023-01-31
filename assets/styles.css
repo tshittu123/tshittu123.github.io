@@ -527,6 +527,14 @@ a {
   cursor: pointer;
 }
 
+.ft_content:first-of-type h3 {
+  font-weight: bold;
+}
+
+.ft_content:nth-of-type(2) h3 {
+  text-decoration: underline;
+}
+
 /* Booking Page */
 
 .space_selection {
@@ -683,6 +691,7 @@ a {
 .norm_events img {
   width: 100%;
   margin-bottom: 18px;
+  border-radius: 12px;
 }
 
 .norm_events h4,
@@ -703,6 +712,7 @@ a {
 
 .feat {
   color: var(--custom-col) !important;
+  font-weight: bold;
 }
 
 .first_desc {
@@ -834,6 +844,7 @@ a {
 
 .myPrice h5 {
   margin: 0 !important;
+  white-space: nowrap;
 }
 
 .grid_icons {
@@ -874,6 +885,12 @@ a {
 @media (max-width: 1200px) {
   #events {
     grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 990px) {
+  .myPrice h5 {
+    margin: 0 !important;
+    white-space: normal;
   }
 }
 @media (max-width: 768px) {
@@ -963,6 +980,7 @@ a {
   .ft_content:nth-of-type(2) {
     align-items: flex-start;
   }
+
   .ft_content h3 {
     font-size: 18px;
   }

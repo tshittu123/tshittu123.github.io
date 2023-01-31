@@ -56,6 +56,7 @@ const spaces = [
     id: 2,
     categories: ["events", "trainings"],
     features: [
+      ["", ""],
       ["seats", "Seats 21 people"],
       ["stage", "Whiteboards"],
       ["projector", "Projector screen"],
@@ -69,12 +70,13 @@ const spaces = [
   {
     image: "assets/images/event5.png",
     name: "Galactica (Meeting room)",
-    desc: "A conferencing room for collaborating and launching new innovative ideas. Features include",
+    desc: "A conferencing room for collaborating and launching new innovative ideas.",
     cost: 10000,
     duration: "per hour",
     id: 3,
     categories: ["trainings"],
     features: [
+      ["", ""],
       ["seats", "Seats 7 people"],
       ["stage", "Video Confrencing"],
       ["projector", "TV screen"],
@@ -95,6 +97,7 @@ const spaces = [
     id: 4,
     categories: ["trainings"],
     features: [
+      ["", ""],
       ["seats", "Seats 8 people"],
       ["stage", "Soundproof"],
       ["projector", "Presentation TV"],
@@ -115,6 +118,7 @@ const spaces = [
     id: 5,
     categories: ["demos"],
     features: [
+      ["", ""],
       ["seats", "Seats 8 people"],
       ["stage", "Large Whiteboard"],
       ["projector", "Presentation TV's"],

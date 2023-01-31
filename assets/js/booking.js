@@ -9,10 +9,15 @@ const spaceGetter = (space_name) => {
           <img src="${sp.image}" />
           <h4>${sp.name}</h4>
           <p>${sp.desc}</p>
-          <p class="feat">Features</p>
-          <div class="grid_icons">`;
+      
+          <div class="grid_icons">
+          <p class="feat">Features</p>`;
       sp.features.forEach((feat) => {
-        space = `${space}<p><img src="assets/images/icons/${feat[0]}.png" />${feat[1]}</p>`;
+        let img = "";
+        if (feat[0]) {
+          img = `<img src="assets/images/icons/${feat[0]}.png" />`;
+        }
+        space = `${space}<p>${img}${feat[1]}</p>`;
       });
       space = `${space}
           </div>

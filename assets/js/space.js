@@ -184,7 +184,7 @@ next.addEventListener("click", () => {
       space.cost *
       (form_details.event_end_time - form_details.event_start_time);
 
-    space_span.innerText = `${space_span.innerText} for ${
+    space_span.innerText = `has been selected for ${
       form_details.event_end_time - form_details.event_start_time
     } hour(s)`;
     space_cost.innerText = calcCost.toLocaleString();
