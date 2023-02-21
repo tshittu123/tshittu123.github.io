@@ -78,7 +78,7 @@ const spaces = [
     features: [
       ["", ""],
       ["seats", "Seats 7 people"],
-      ["stage", "Video Confrencing"],
+      ["stage", "Teleconferencing"],
       ["projector", "TV screen"],
       ["printing", "Printing and copy"],
       ["lounge", "Lounge area"],
