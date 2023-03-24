@@ -11,7 +11,7 @@ const spaceGetter = (space_name) => {
           <p>${sp.desc}</p>
       
           <div class="grid_icons">
-          <p class="feat">Features</p>`;
+          <p class="feat">features</p>`;
       sp.features.forEach((feat) => {
         let img = "";
         if (feat[0]) {
