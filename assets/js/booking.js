@@ -7,6 +7,7 @@ const spaceGetter = (space_name) => {
       space = `${space}
       <div class="norm_events">
           <img src="${sp.image}" />
+          <div class='norm_body'>
           <h4>${sp.name}</h4>
           <p>${sp.desc}</p>
       
@@ -32,6 +33,7 @@ const spaceGetter = (space_name) => {
               <a href="space.html?space=${sp.id}">
                 <button class="cst_btn">Book Space</button>
               </a>
+            </div>
             </div>
           </div>
         </div>

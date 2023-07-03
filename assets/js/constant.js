@@ -181,6 +181,6 @@ const works = [
       "Networking opportunities",
     ],
     class: "blue_events",
-    btn: "cst_btn1",
+    btn: "cst_btn",
   },
 ];
