@@ -27,13 +27,16 @@ document.querySelector("#pright").addEventListener("click", () => {
 });
 
 const image_popup = document.querySelector(".image_popup_holder");
-document.querySelector("#image_close").addEventListener("click", () => {
+// document.querySelector("#image_close").addEventListener("click", () => {
+//   image_popup.style.display = "none";
+// });
+const closeModal = () => {
   image_popup.style.display = "none";
-});
+};
 
 const slideTo = (x) => {
   image_popup.style.display = "block";
-  lswiper.slideTo(x);
+  lswiper.slideTo(x, 0, false);
 };
 
 // FAQS
