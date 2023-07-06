@@ -120,18 +120,18 @@
             <h3>Event Gallery</h3>
             <p>Take a look at some of the events held at SpaceNXT.</p>
             <div class="images_gallery full_bleed2">
-              <img src="assets/images/gallery1.png" />
-              <img src="assets/images/gallery2.png" />
-              <img src="assets/images/gallery3.png" />
-              <img src="assets/images/gallery4.png" />
+              <img src="assets/images/gallery1.png" onclick="slideTo(0)" />
+              <img src="assets/images/gallery2.png" onclick="slideTo(1)" />
+              <img src="assets/images/gallery3.png" onclick="slideTo(2)" />
+              <img src="assets/images/gallery4.png" onclick="slideTo(3)" />
 
-              <img src="assets/images/gallery5.png" />
-              <img src="assets/images/gallery6.png" />
-              <img src="assets/images/gallery7.png" />
-              <img src="assets/images/gallery8.png" />
+              <img src="assets/images/gallery5.png" onclick="slideTo(4)" />
+              <img src="assets/images/gallery6.png" onclick="slideTo(5)" />
+              <img src="assets/images/gallery7.png" onclick="slideTo(6)" />
+              <img src="assets/images/gallery8.png" onclick="slideTo(7)" />
 
               <img />
-              <img src="assets/images/gallery9.png" />
+              <img src="assets/images/gallery9.png" onclick="slideTo(8)" />
               <img />
               <img />
             </div>
@@ -296,12 +296,38 @@
           </div>
           <div class="ft_content_img">
             <p>Powered by</p>
-            <a href="https://www.unionbankng.com/">
+            <a href="https://www.unionbankng.com/ target="_blank"">
               <img src="./assets/images/union-logo.png" />
             </a>
           </div>
         </div>
       </div>
     </footer>
+    <div class="image_popup_holder">
+      <img
+        class="image_popup_close"
+        src="./assets/images/close.png"
+        id="image_close"
+      />
+      <div class="image_popup">
+        <div class="image_popup_lib">
+          <div class="lswiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide s-one"></div>
+              <div class="swiper-slide s-two"></div>
+              <div class="swiper-slide s-three"></div>
+              <div class="swiper-slide s-one"></div>
+              <div class="swiper-slide s-two"></div>
+              <div class="swiper-slide s-three"></div>
+              <div class="swiper-slide s-one"></div>
+              <div class="swiper-slide s-two"></div>
+              <div class="swiper-slide s-three"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -11,6 +11,13 @@ const swiper = new Swiper(".swiper", {
     },
   },
 });
+const lswiper = new Swiper(".lswiper", {
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
 document.querySelector("#pleft").addEventListener("click", () => {
   swiper.slidePrev();
@@ -18,6 +25,16 @@ document.querySelector("#pleft").addEventListener("click", () => {
 document.querySelector("#pright").addEventListener("click", () => {
   swiper.slideNext();
 });
+
+const image_popup = document.querySelector(".image_popup_holder");
+document.querySelector("#image_close").addEventListener("click", () => {
+  image_popup.style.display = "none";
+});
+
+const slideTo = (x) => {
+  image_popup.style.display = "block";
+  lswiper.slideTo(x);
+};
 
 // FAQS
 const faqs = document.querySelectorAll(".faq_item");
