@@ -90,7 +90,7 @@ const spaces = [
   {
     image: "assets/images/event3.png",
     name: "The Vault",
-    desc: "A dedicated space made for board/corporate meetings, podcast recordings and more.",
+    desc: "A dedicated space made for corporate meetings, podcast recordings and more.",
     capacity: "The vault seats 12 persons",
     cost: 11000,
     duration: "per hour",

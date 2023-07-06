@@ -45,6 +45,7 @@ body {
 
 .home_slider {
   width: 100%;
+  padding: 0px 60px;
   padding-top: 150px;
   background-size: cover;
   background-position: center;
@@ -112,11 +113,23 @@ a {
   text-decoration: none;
 }
 
+.cst_btn2 {
+  border: 1px solid var(--custom-col);
+  background-color: transparent;
+  color: #fff;
+}
+
+.cst_btn2 a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .header_cta {
   background-color: hsla(197, 100%, 44%, 0.65);
   border: none;
 }
 .header_holder {
+  padding: 0px 60px;
   position: fixed;
   width: 100%;
   box-shadow: 0px 4px 4px rgba(140, 140, 140, 0.1);
@@ -130,11 +143,12 @@ a {
   );
   box-shadow: 0px 4px 4px 0px rgba(140, 140, 140, 0.05);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 .header {
   display: grid;
   grid-template-columns: 100px 1fr;
-  padding: 16px;
+  padding: 16px 0;
   overflow-x: hidden;
 
   height: 100px;
@@ -301,6 +315,9 @@ a {
 .content-container h2 {
   font-size: 48px;
   font-weight: bold;
+}
+.content-container h2 div {
+  white-space: nowrap;
 }
 
 .content-container p {
@@ -1033,6 +1050,11 @@ a {
   font-size: 14px;
   color: crimson;
 }
+@media (max-width: 1250px) {
+  .content-container h2 div {
+    white-space: normal;
+  }
+}
 @media (max-width: 1200px) {
   #events {
     grid-template-columns: 1fr 1fr;
@@ -1042,6 +1064,11 @@ a {
   .myPrice h5 {
     margin: 0 !important;
     white-space: normal;
+  }
+
+  .slider-container {
+    margin-top: 30px;
+    padding: 0;
   }
 }
 @media (max-width: 768px) {
@@ -1068,14 +1095,17 @@ a {
     padding-top: 30px;
   }
 
+  .home_slider {
+    padding: 0px 30px;
+    padding-top: 150px;
+  }
+
+  .header_holder {
+    padding: 0px 30px;
+  }
   .btn_holder {
     grid-template-columns: 1fr;
     gap: 16px;
-  }
-
-  .slider-container {
-    margin-top: 30px;
-    padding: 0;
   }
 
   .video {
