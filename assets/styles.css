@@ -267,6 +267,7 @@ a {
   height: 100%;
   background-size: cover;
   border-radius: 12px;
+  background-position: center;
 }
 
 .s-one {
@@ -277,6 +278,34 @@ a {
 }
 .s-three {
   background-image: url(./images/slider3.png);
+}
+
+.g-one {
+  background-image: url(./images/g_1.jpeg);
+}
+.g-two {
+  background-image: url(./images/g_2.jpeg);
+}
+.g-three {
+  background-image: url(./images/g_3.jpeg);
+}
+.g-four {
+  background-image: url(./images/g_4.jpeg);
+}
+.g-five {
+  background-image: url(./images/g_5.jpeg);
+}
+.g-six {
+  background-image: url(./images/g_6.jpeg);
+}
+.g-seven {
+  background-image: url(./images/g_7.jpeg);
+}
+.g-eight {
+  background-image: url(./images/g_8.jpeg);
+}
+.g-nine {
+  background-image: url(./images/g_9.jpeg);
 }
 
 .mybox {

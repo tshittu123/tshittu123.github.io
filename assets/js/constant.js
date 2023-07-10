@@ -111,7 +111,7 @@ const spaces = [
   {
     image: "assets/images/event4.png",
     name: "Demo Lab",
-    desc: "Access to a dedicated space designed for board/corporate meetings, podcast recordingss and lots more.",
+    desc: "Access to a dedicated space designed for testing of product prototype",
     capacity: "The vault seats 12 persons",
     cost: 30000,
     duration: "per hour",
