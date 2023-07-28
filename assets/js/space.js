@@ -26,6 +26,10 @@ const head1 = document.querySelector("#head1");
 const head2 = document.querySelector("#head2");
 const form1 = document.querySelector("#step1");
 const form2 = document.querySelector("#step2");
+const termsconditions = document.querySelector("#termsconditions");
+const tandc = document.querySelector("#tandc");
+const tclick = document.querySelector("#tclick");
+const cancel_x = document.querySelector("#cancel_x");
 const next = document.querySelector("#next");
 const errs = document.querySelector("#errs");
 const page_title = document.querySelector("#page_title");
@@ -47,6 +51,14 @@ const editForm1 = document.querySelector("#editForm1");
 const s_date = document.querySelector("#s_date");
 const s_strt = document.querySelector("#s_strt");
 const s_atte = document.querySelector("#s_atte");
+const terms = document.querySelector("#terms");
+
+tclick.addEventListener("click", () => {
+  tandc.style.display = "block";
+});
+cancel_x.addEventListener("click", () => {
+  tandc.style.display = "none";
+});
 
 editForm1.addEventListener(
   "click",
@@ -55,6 +67,7 @@ editForm1.addEventListener(
     form1.style.display = "grid";
     head1.style.display = "grid";
     form2.style.display = "none";
+    termsconditions.style.display = "none";
     head2.style.display = "none";
     next.innerText = "Next";
     page_title.innerText = "Enter event details";
@@ -109,6 +122,8 @@ let form_details = {
   user_phone: "",
   user_social_media: "",
   user_organisation: "",
+
+  terms: false,
 };
 
 next.addEventListener("click", () => {
@@ -167,6 +182,10 @@ next.addEventListener("click", () => {
     user_organisation.value
       ? (form_details.user_organisation = user_organisation.value)
       : errs_arr.push("Ensure Organisation is Correctly Filled");
+
+    terms.checked
+      ? (form_details.terms = true)
+      : errs_arr.push("Please accept Terms and Conditions");
   }
 
   if (errs_arr.length > 0) {
@@ -191,6 +210,7 @@ next.addEventListener("click", () => {
     form1.style.display = "none";
     head1.style.display = "none";
     form2.style.display = "grid";
+    termsconditions.style.display = "flex";
     head2.style.display = "grid";
     next.innerText = "Confirm booking";
     page_title.innerText = "Enter user details";

@@ -29,6 +29,22 @@ const user_email = document.querySelector("#user_email");
 const user_phone = document.querySelector("#user_phone");
 const start_date = document.querySelector("#start_date");
 
+const termsconditions = document.querySelector("#termsconditions");
+const tandc = document.querySelector("#tandc");
+const tclick = document.querySelector("#tclick");
+const cancel_x = document.querySelector("#cancel_x");
+
+const terms = document.querySelector("#terms");
+
+termsconditions.style.display = "flex";
+
+tclick.addEventListener("click", () => {
+  tandc.style.display = "block";
+});
+cancel_x.addEventListener("click", () => {
+  tandc.style.display = "none";
+});
+
 [user_name, user_email, user_phone, start_date].forEach((el) => {
   el.addEventListener(
     "keyup",
@@ -57,6 +73,7 @@ let form_details = {
     user_email: "",
     user_phone: "",
     start_date: "",
+    terms: false,
   },
 };
 
@@ -76,17 +93,13 @@ next.addEventListener("click", () => {
       ? (form_details.user_phone = user_phone.value)
       : errs_arr.push("Ensure Phone is Correctly Filled");
 
-    user_address.value
-      ? (form_details.user_address = user_address.value)
-      : (form_details.user_address = "");
-
     start_date.valueAsDate
       ? (form_details.start_date = start_date.value)
       : errs_arr.push("Ensure Start Date is Correctly Filled");
 
-    end_date.valueAsDate
-      ? (form_details.end_date = end_date.value)
-      : errs_arr.push("Ensure End Date is Correctly Filled");
+    terms.checked
+      ? (form_details.terms = true)
+      : errs_arr.push("Please accept Terms and Conditions");
   }
 
   if (errs_arr.length > 0) {
