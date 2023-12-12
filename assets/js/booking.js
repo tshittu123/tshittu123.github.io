@@ -80,7 +80,6 @@ lis.forEach((li) => {
       document.querySelector("#events").innerHTML = worksGetter();
       return;
     }
-    console.log(space);
     if (space == "trainings & meetings") {
       space = "trainings";
     }

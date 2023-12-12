@@ -68,13 +68,11 @@ form1.style.display = "grid";
 head1.style.display = "grid";
 
 let form_details = {
-  step1: {
-    user_name: "",
-    user_email: "",
-    user_phone: "",
-    start_date: "",
-    terms: false,
-  },
+  user_name: "",
+  user_email: "",
+  user_phone: "",
+  start_date: "",
+  terms: false,
 };
 
 next.addEventListener("click", () => {
@@ -112,22 +110,47 @@ next.addEventListener("click", () => {
   }
 
   if (step == 1) {
-    let handler = PaystackPop.setup({
-      key: paystack_key,
-      email: form_details.user_email,
-      amount: coworking.cost * 100,
-      // label: "Optional string that replaces customer email"
-      onClose: function () {
-        alert("Window closed.");
+    next.innerText = "Submitting...";
+    next.setAttribute("disabled", true);
+    const form_data = {
+      eventType: "Events",
+      eventTitle: "Co-working",
+      date: new Date(form_details.start_date).toLocaleDateString("en-GB"),
+      startTime: 0,
+      endTime: 24,
+      noOfAttendance: 1,
+      categoryName: "Co-working",
+      subCategoryName: coworking.plan,
+      personalInformation: {
+        purposeOfUsage: "Co-working",
+        name: form_details.user_name,
+        email: form_details.user_email,
+        phoneNumber: form_details.user_phone,
+        organization: "",
+        socialMedia: "",
       },
-      callback: function (response) {
-        let message = "Payment complete! Reference: " + response.reference;
-        alert(message);
-      },
-    });
-
-    handler.openIframe();
+    };
+    axios
+      .post(apiUrl + "reservations", form_data)
+      .then((res) => {
+        Swal.fire({
+          title: "Success!",
+          text: "Application successfully sent, you will be contacted shortly",
+          icon: "success",
+          confirmButtonText: "Okay",
+        }).then(() => {
+          window.location.href = "/";
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Okay",
+        });
+        next.innerText = "Confirm booking";
+        next.removeAttribute("disabled");
+      });
   }
 });
-
-console.log(axios);

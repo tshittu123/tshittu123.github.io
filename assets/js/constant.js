@@ -24,6 +24,8 @@ const validateEmail = (email) => {
 
 const paystack_key = "pk_test_dc4b5d5d52135da8876154a43229ba0f35621d23";
 
+const apiUrl = "/api/";
+
 const spaces = [
   {
     image: "assets/images/event1.png",

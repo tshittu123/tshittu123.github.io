@@ -34,6 +34,8 @@ const next = document.querySelector("#next");
 const errs = document.querySelector("#errs");
 const page_title = document.querySelector("#page_title");
 
+const step_li_two = document.querySelector("#step_li_two");
+
 const event_title = document.querySelector("#title");
 const event_date = document.querySelector("#date");
 const event_start_time = document.querySelector("#start_time");
@@ -152,7 +154,6 @@ next.addEventListener("click", () => {
       ? (form_details.event_no_attendees = event_no_attendees.value)
       : errs_arr.push("Ensure No. of Attendees is Correctly Filled");
 
-    console.log(form_details.event_end_time - form_details.event_start_time);
     if (form_details.event_end_time - form_details.event_start_time <= 0) {
       errs_arr.push("Ensure End Time is Later Than Start Time");
     }
@@ -197,11 +198,11 @@ next.addEventListener("click", () => {
     return;
   }
 
+  const calcCost =
+    space.cost * (form_details.event_end_time - form_details.event_start_time);
+
   if (step == 1) {
     step = 2;
-    const calcCost =
-      space.cost *
-      (form_details.event_end_time - form_details.event_start_time);
 
     space_span.innerText = `has been selected for ${
       form_details.event_end_time - form_details.event_start_time
@@ -214,6 +215,7 @@ next.addEventListener("click", () => {
     head2.style.display = "grid";
     next.innerText = "Confirm booking";
     page_title.innerText = "Enter user details";
+    step_li_two.classList.add("active");
     s_date.innerText = new Date(form_details.event_date).toLocaleDateString(
       "en-GB"
     );
@@ -221,22 +223,47 @@ next.addEventListener("click", () => {
     s_atte.innerText = form_details.event_no_attendees;
     window.scrollTo(0, 0);
   } else if (step == 2) {
-    let handler = PaystackPop.setup({
-      key: paystack_key,
-      email: form_details.user_email,
-      amount: calcCost * 100,
-      // label: "Optional string that replaces customer email"
-      onClose: function () {
-        alert("Window closed.");
+    next.innerText = "Submitting...";
+    next.setAttribute("disabled", true);
+    const form_data = {
+      eventType: "Events",
+      eventTitle: form_details.event_title,
+      date: new Date(form_details.event_date).toLocaleDateString("en-GB"),
+      startTime: form_details.event_start_time,
+      endTime: form_details.event_end_time,
+      noOfAttendance: form_details.event_no_attendees,
+      categoryName: "Events",
+      subCategoryName: space.name,
+      personalInformation: {
+        purposeOfUsage: form_details.user_purpose,
+        name: form_details.user_name,
+        email: form_details.user_email,
+        phoneNumber: form_details.user_phone,
+        organization: form_details.user_organisation,
+        socialMedia: form_details.user_social_media,
       },
-      callback: function (response) {
-        let message = "Payment complete! Reference: " + response.reference;
-        alert(message);
-      },
-    });
-
-    handler.openIframe();
+    };
+    axios
+      .post(apiUrl + "reservations", form_data)
+      .then((res) => {
+        Swal.fire({
+          title: "Success!",
+          text: "Application successfully sent, you will be contacted shortly",
+          icon: "success",
+          confirmButtonText: "Okay",
+        }).then(() => {
+          window.location.href = "/";
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Okay",
+        });
+        next.innerText = "Confirm booking";
+        next.removeAttribute("disabled");
+      });
   }
 });
-
-console.log(axios);
